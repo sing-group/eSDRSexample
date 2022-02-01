@@ -1,0 +1,79 @@
+% date: Date2MillisTransformer
+% URLs: Url2BinaryTransformer
+% interjection: ComputeOcurrencesTransformer
+% synsetPolarity: InputScale2OutputScaleTransformer
+% tokenPolarity: InputScale2OutputScaleTransformer
+% target: Enum2IntTransformer --> ham: 0, spam: 1 
+
+
+@relation dataset
+
+@attribute id string
+@attribute bn:00093430v numeric
+@attribute bn:00049156n numeric
+@attribute bn:00054316n numeric
+@attribute bn:00018748n numeric
+@attribute bn:00007731n numeric
+@attribute bn:00052061n numeric
+@attribute bn:00053079n numeric
+@attribute bn:00029424n numeric
+@attribute bn:00036129n numeric
+@attribute bn:00090408v numeric
+@attribute bn:00056068n numeric
+@attribute bn:00033987n numeric
+@attribute bn:00004222n numeric
+@attribute bn:00114778r numeric
+@attribute bn:00084231v numeric
+@attribute bn:00023542n numeric
+@attribute bn:00036188n numeric
+@attribute bn:00016606n numeric
+@attribute bn:00110606a numeric
+@attribute bn:00031965n numeric
+@attribute bn:00015258n numeric
+@attribute bn:13674300v numeric
+@attribute bn:00015267n numeric
+@attribute bn:00114491r numeric
+@attribute bn:00081469n numeric
+@attribute bn:00100895a numeric
+@attribute bn:00084331v numeric
+@attribute bn:00030950n numeric
+@attribute bn:00047172n numeric
+@attribute bn:00114535r numeric
+@attribute bn:00022996n numeric
+@attribute bn:00003095n numeric
+@attribute bn:00099558a numeric
+@attribute bn:00058006n numeric
+@attribute bn:03149538n numeric
+@attribute bn:00050884n numeric
+@attribute bn:00097846a numeric
+@attribute bn:00102850a numeric
+@attribute bn:00004605n numeric
+@attribute bn:00098274a numeric
+@attribute bn:00026191n numeric
+@attribute bn:00054126n numeric
+@attribute bn:00107825a numeric
+@attribute bn:00059945n numeric
+@attribute bn:00071570n numeric
+@attribute target {0,1}
+
+@data
+exampleFile/_ham_/12.tsms,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/20.tsms,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/18.tsms,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/14.tsms,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/13.tsms,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/19.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/10.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/17.tsms,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/16.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/11.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_ham_/15.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+exampleFile/_spam_/7.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+exampleFile/_spam_/5.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+exampleFile/_spam_/9.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1
+exampleFile/_spam_/3.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1
+exampleFile/_spam_/2.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1
+exampleFile/_spam_/6.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1
+exampleFile/_spam_/4.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1
+exampleFile/_spam_/8.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,1,0,1
+exampleFile/_spam_/1.tsms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1,1
