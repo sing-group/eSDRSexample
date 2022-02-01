@@ -20,12 +20,17 @@ import weka.core.converters.ArffLoader;
  */
 public class Main {
 
+    /**
+     * Main method
+     *
+     * @param args Args needed to main execution
+     */
     public static void main(String[] args) {
         // Theorethical evaluation
         String file = "exampleFile.arff";
         try {
             realScenario(file, 3, 0.85, 25, 75);
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             System.out.println("File " + file + " does not exist.");
         }
 
@@ -40,7 +45,7 @@ public class Main {
      * synsets belongs to the same class
      * @param ntest Percentage of instances in test dataset
      * @param ntrain Percentage of instances in training dataset
-     * @throws IOException
+     * @throws IOException Exception if file does not exists
      */
     public static void realScenario(String fileName, int maxDegree, double requiredSimilarity, int ntest, int ntrain) throws IOException {
 
